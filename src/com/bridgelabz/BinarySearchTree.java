@@ -1,6 +1,8 @@
 package com.bridgelabz;
 
 public class BinarySearchTree {
+	int size = 0;
+
 	public Node insertData(Node node, int data) {
 
 		if (node == null) {
@@ -17,6 +19,7 @@ public class BinarySearchTree {
 
 	public Node createNewNode(int data) {
 		Node node = new Node(data);
+		size += 1;
 		return node;
 	}
 
@@ -30,4 +33,7 @@ public class BinarySearchTree {
 
 	}
 
+	public int size() {
+		return size;
+	}
 }
