@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 public class BinarySearchTree {
+
 	int size = 0;
 
 	public Node insertData(Node node, int data) {
@@ -35,5 +36,25 @@ public class BinarySearchTree {
 
 	public int size() {
 		return size;
+	}
+
+	public boolean search(Node node, int data) {
+		if (node == null) {
+			return false;
+		}
+
+		boolean isPresent = false;
+		while (node != null) {
+			if (data < node.data) {
+				node = node.left;
+			} else if (data > node.data) {
+				node = node.right;
+			} else {
+				isPresent = true;
+				break;
+			}
+		}
+
+		return isPresent;
 	}
 }
